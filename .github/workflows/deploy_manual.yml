@@ -26,6 +26,7 @@ jobs:
           echo ${{ secrets.PRIVATE_KEY }}
           echo "hosts"
           echo ${{ secrets.KNOWN_HOSTS }}
+          cat ~/.ssh/known_host
 
       - name: Deploy
         uses: deployphp/action@master
