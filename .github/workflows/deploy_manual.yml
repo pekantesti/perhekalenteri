@@ -21,6 +21,14 @@ jobs:
         with:
           php-version: 7.4
           
+      - name: Setup SSH
+        uses: kielabokkie/ssh-key-and-known-hosts-action@v1.2.0
+        with:
+          # Private key required to access the host
+          ssh-private-key: ${{ secrets.PRIVATE_KEY }}
+          # Hostname or IP to add to the known hosts file
+          ssh-host: neutroni.hayo.fi
+          
       - name: Print
         run: echo "private"
           echo ${{ secrets.PRIVATE_KEY }}
