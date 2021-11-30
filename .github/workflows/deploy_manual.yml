@@ -20,6 +20,12 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: 7.4
+          
+      - name: Print
+        run: echo "private"
+          echo ${{ secrets.PRIVATE_KEY }}
+          echo "hosts"
+          echo ${{ secrets.KNOWN_HOSTS }}
 
       - name: Deploy
         uses: deployphp/action@master
