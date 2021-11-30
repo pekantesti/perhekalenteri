@@ -28,13 +28,6 @@ jobs:
           ssh-private-key: ${{ secrets.PRIVATE_KEY }}
           # Hostname or IP to add to the known hosts file
           ssh-host: neutroni.hayo.fi
-          
-      - name: Print
-        run: echo "private"
-          echo ${{ secrets.PRIVATE_KEY }}
-          echo "hosts"
-          echo ${{ secrets.KNOWN_HOSTS }}
-          cat ~/.ssh/known_host
 
       - name: Deploy
         uses: deployphp/action@master
