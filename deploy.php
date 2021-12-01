@@ -4,13 +4,13 @@ namespace Deployer;
 require 'recipe/common.php';
 
 // Project name
-set('application', 'perhekalenteri');
+set('application', 'perhekalenteri-pekantesti');
 
 // Project repository
 set('repository', 'git@github.com:pekkatapio/perhekalenteri.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
-set('git_tty', true);
+// set('git_tty', true);
 
 // Shared files/dirs between deploys
 set('shared_files', []);
@@ -21,6 +21,7 @@ set('writable_dirs', []);
 
 // Hosts
 host('neutroni.hayo.fi')
+    ->user('koodaaja')
     ->set('deploy_path', '~/public_html/{{application}}');
 
 // Tasks
